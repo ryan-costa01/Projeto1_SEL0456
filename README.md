@@ -5,7 +5,7 @@
 Primeiro projeto da matéria SEL0456 - Técnicas em Desenvolvimento de Software Livre.
 
  ## :wrench: Explicação do programa
- Ao inicializar o programa, o usuário deverá inserir um número inteiro, onde esse número definirá o tamanho do vetor que será gerado.
+ Ao inicializar o programa, o usuário deverá inserir um número inteiro entre 1 e 20, onde esse número definirá o tamanho do vetor que será gerado.
 
  Ex: `input: 5 -> vetor[5]`
      `input: 8 -> vetor[8]`
@@ -42,17 +42,21 @@ A media dos valores do vetor:
 
 ## :rocket: Rodando o projeto
 
-1. Clone the repo
+1. Clone o repositório
    ```sh
    git clone git@github.com:ryan-costa01/Projeto1_SEL0456.git
    ```
-2. Compile o programa  `functionMain.c`
+2. Compile o programa atraves do comando definido pelo `makefile`
    ```cmd
    make
    ```
 3. Inicialize o programa
    ```cmd
    make run
+   ```
+4. Para apagar os arquivos `/*.o`
+   ```cmd
+   make clean
    ```
 ## :memo: License
 
