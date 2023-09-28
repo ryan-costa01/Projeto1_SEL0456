@@ -6,15 +6,27 @@ TARGET=functionMain
 GCC=gcc
 OBJS=functionMain.c
 FunC=Soma.c Media.c Elev2.c
+CFLAGS = -Wall -I ./$(HDIR)
 
-all:$(OBJS)
-	@echo "Compilação Iniciada"
-	$(GCC) -c $(FunC)
-	$(GCC) -o $(TARGET) $(OBJS) -lm 
+HDIR = headers
+OBJDIR = obj
+
+SRC = $(wildcard *.c)
+OBJ = $(patsubst %.c,$(OBJDIR)/%.o,$(SRC))
+
+all: $(TARGET)
+	
 	@echo "Programa Compilado"
+$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $^ -lm
+	
+$(OBJDIR)/%.o: %.c
+	@mkdir -p $(OBJDIR)
+	$(CC) $(CFLAGS) -c $< -lm -o $@ 
+
 run:
 	@echo "------Programa Iniciado------"
 	@./$(TARGET)
 	@echo "------Programa Finalizado------"
 clean:
-	rm -rf *.o
+	rm -rf ./obj/*
