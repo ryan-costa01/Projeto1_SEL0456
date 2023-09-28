@@ -9,9 +9,9 @@ Micro 04
 #include <stdio.h>
 #include<stdlib.h>
 #include<time.h>
-#include"Soma.c"
-#include"Elev2.c"
-#include"Media.c"
+#include"Soma.h"
+#include"Elev2.h"
+#include"Media.h"
 
 
 int main(){
@@ -21,7 +21,7 @@ int main(){
     printf("Digite o tamanho do seu vetor no intervalo de [1-20]\n");
     scanf("%d", &tam_vet);
     
-    while(tam_vet<1 || tam_vet>20){
+    if(tam_vet<1 || tam_vet>20){
         printf("Entrada Invalida.\nDigite um valor no intervalo de [1-20]\n");
         return 0;
     }
