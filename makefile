@@ -5,9 +5,12 @@
 TARGET=functionMain
 GCC=gcc
 OBJS=functionMain.c
+FunC=Soma.c Media.c Elev2.c
 
 all:$(OBJS)
-	@$(GCC) -o $(TARGET) $(OBJS) -lm 
+	@echo "Compilação Iniciada"
+	$(GCC) -c $(FunC)
+	$(GCC) -o $(TARGET) $(OBJS) -lm 
 	@echo "Programa Compilado"
 run:
 	@echo "------Programa Iniciado------"

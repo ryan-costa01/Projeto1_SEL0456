@@ -7,67 +7,24 @@ n°USP: 11953369
 Micro 04
 */
 #include <stdio.h>
-#include<math.h>
 #include<stdlib.h>
 #include<time.h>
+#include"Soma.c"
+#include"Elev2.c"
+#include"Media.c"
 
-// Função que eleva ao quadrado cada elemento do vetor e retorna um novo vetor
-double* Elev_2(int vet_tam, double vetor[]){
-
-    //Aloca memoria para o vetor
-    double* resultado = malloc(vet_tam * sizeof(double));
-    if (resultado == NULL) {
-        // Tratamento de erro caso a alocação de memória falhe
-        perror("Erro na alocação de memória");
-        exit(EXIT_FAILURE);
-    }
-    //eleva os termos do vetor ao quadrado
-    for (int i = 0; i < vet_tam; i++) {
-        resultado[i] = pow(vetor[i], 2);
-    }
-
-    printf("Vetor elevado ao quadrado:\n");
-    for (int i = 0; i < vet_tam; i++) {
-        printf("%.2f ", resultado[i]);
-    }
-    printf("\n");
-    
-    return resultado;
-
-}
-// Função que calcula a média dos elementos do vetor
-double  Media(int vet_tam, double vetor[]){
-    double soma = 0.0;
-    
-    for (int i = 0; i < vet_tam; i++) {
-        soma += vetor[i];
-    }
-    double media = soma/vet_tam;
-    
-    printf("A media dos valores do vetor:\n %.2f\n", media);
-
-    return media;
-
-}
-// Função que soma todos os elementos do vetor
-double Soma(int vet_tam, double vetor[]){
-    
-    double soma = 0.0;
-    
-    for (int i = 0; i < vet_tam; i++) {
-        soma += vetor[i];
-    }
-    printf("A soma dos valores do vetor:\n %.2f\n", soma);
-    return soma;
-}
 
 int main(){
-
+    
     int tam_vet;
     // Usuário define o tamanho do vetor
-    printf("Digite o tamanho do seu vetor\n");
+    printf("Digite o tamanho do seu vetor no intervalo de [1-20]\n");
     scanf("%d", &tam_vet);
     
+    while(tam_vet<1 || tam_vet>20){
+        printf("Entrada Invalida.\nDigite um valor no intervalo de [1-20]\n");
+        return 0;
+    }
     double meuVetor[tam_vet];
 
     srand(time(NULL));
@@ -83,7 +40,6 @@ int main(){
         printf("%.2f ", meuVetor[i]);
     }
     printf("\n");
-
     //Chama as funções criadas
     double* vetorElevadoAoQuadrado = Elev_2(tam_vet, meuVetor);
     Soma(tam_vet, meuVetor);
