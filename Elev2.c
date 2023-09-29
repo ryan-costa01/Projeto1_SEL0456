@@ -9,6 +9,7 @@ Micro 04
 #include <stdio.h>
 #include<math.h>
 #include<stdlib.h>
+#include "Elev2.h"
 
 // Função que eleva ao quadrado cada elemento do vetor e retorna um novo vetor
 double* Elev_2(int vet_tam, double vetor[]){
