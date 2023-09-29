@@ -7,6 +7,7 @@ n°USP: 11953369
 Micro 04
 */
 #include <stdio.h>
+#include "Soma.h"
 
 // Função que soma todos os elementos do vetor
 double Soma(int vet_tam, double vetor[]){

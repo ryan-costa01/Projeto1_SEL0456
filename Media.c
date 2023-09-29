@@ -7,6 +7,7 @@ n°USP: 11953369
 Micro 04
 */
 #include <stdio.h>
+#include "Media.h"
 
 
 // Função que calcula a média dos elementos do vetor
